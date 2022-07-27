@@ -1,22 +1,26 @@
-﻿using Interaction;
-using Interaction.Core;
+﻿using Interaction.Core;
 using Inventory.Core;
 using UnityEngine;
 
-namespace Inventory.Items
+namespace Interaction
 {
     public class ItemInteractableObject : InteractableObject
     {
-        [field: SerializeField] public Item Item { get; private set; }
-        public override bool TryToInteract(IInteractor interactor)
+        [field: SerializeField] private Item Item { get; set; }
+        [field: SerializeField] private float _timeToDestroyItem = .5f;
+        
+        public override void Interact(IInteractor interactor)
         {
-            base.TryToInteract(interactor);
+            base.Interact(interactor);
 
             interactor.ItemPicker.Inventory.ItemContainer.TryToAddItem(new ItemSlot(Item));
             
-            Destroy(gameObject);
-            
-            return true;
+            DestroyObject();
+        }
+
+        private void DestroyObject()
+        {
+            Destroy(gameObject, _timeToDestroyItem);
         }
     }
 }

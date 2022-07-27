@@ -3,6 +3,7 @@ using Data;
 using Entities;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using PlayerInput = Utilities.Input.PlayerInput;
 
 namespace Camera
 {
@@ -10,7 +11,7 @@ namespace Camera
         typeof(Player))]
     public class CameraController : MonoBehaviour
     {
-        [field: SerializeField] public CameraControllerData CameraControllerData { get; private set; }
+        [field: SerializeField] private CameraControllerData CameraControllerData { get; set; }
         
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private Transform _centerTransform;
@@ -18,18 +19,17 @@ namespace Camera
         public UnityEngine.Camera MainCamera { get; private set; }
         
         private Vector3 _targetPosition;
-        private Vector3 _lastPosition;
         private Vector3 _velocity;
-        private Vector3 _onDragStarted;
         
         private float _zoomHeight;
         private float _currentSpeed;
-        private PlayerInputActions.CameraActions _cameraActions;
+        private PlayerInputActions _cameraActions;
         private InputAction _movement;
 
         public void Init(PlayerInput playerInput)
         {
-            _cameraActions = playerInput.PlayerInputActions.Camera;
+            _cameraActions = playerInput.PlayerInputActions;
+            _movement = _cameraActions.Camera.Movement;
         }
 
         private void Start()
@@ -37,57 +37,24 @@ namespace Camera
             MainCamera = UnityEngine.Camera.main;
         }
 
-        private void OnEnable()
-        {
-            _lastPosition = _targetPosition;
-            _movement = _cameraActions.Movement;
-
-            AddInputCallbacks();
-        }
-
-        private void AddInputCallbacks()
-        {
-            _cameraActions.Zoom.performed += ZoomCamera;
-        }
-
-       
         private void Update()
         {
             GetMovement();
             
-            if (_cameraActions.RotationLeft.IsPressed())
+            if (_cameraActions.Camera.RotationLeft.IsPressed())
             {
                 RotateCamera(false);
             }
-            if (_cameraActions.RotationRight.IsPressed())
+            if (_cameraActions.Camera.RotationRight.IsPressed())
             {
                 RotateCamera(true);
             }
 
-            UpdateVelocity();
             UpdateCameraPosition();
             UpdatePosition();
         }
 
-        private void OnDisable()
-        {
-            RemoveInputCallbacks();
-        }
-
-        private void RemoveInputCallbacks()
-        {
-            _cameraActions.Zoom.performed -= ZoomCamera;
-        }
-
-        private void UpdateVelocity()
-        {
-            var position = transform.position;
-            
-            _velocity = (position - _lastPosition) / Time.deltaTime;
-            _velocity.y = 0;
-            _lastPosition = position;
-        }
-
+    
         private void GetMovement()
         {
             Vector3 inputValue = _movement.ReadValue<Vector2>().x * GetCameraRight() +
@@ -124,28 +91,18 @@ namespace Camera
             }
             else
             {
-                _velocity = Vector3.Lerp(_velocity, Vector3.zero, Time.deltaTime * CameraControllerData.Damping);
-                transform.position += _velocity * Time.deltaTime;
+                if (!enabled)
+                {
+                    _velocity = Vector3.zero;
+                }
+                else
+                {
+                    _velocity = Vector3.Lerp(_velocity, Vector3.zero, Time.deltaTime * CameraControllerData.Damping);
+                    transform.position += _velocity * Time.deltaTime;
+                }
             }
             
             _targetPosition = Vector3.zero;
-        }
-        
-        private void ZoomCamera(InputAction.CallbackContext input)
-        {
-            var value = -input.ReadValue<Vector2>().y / 100f;
-
-            if (!(Mathf.Abs(value) > .1f)) return;
-            
-            _zoomHeight = _cameraTransform.localPosition.y + value * CameraControllerData.SizePerScroll;
-
-            if (_zoomHeight < CameraControllerData.MinHeight)
-            {
-                _zoomHeight = CameraControllerData.MinHeight;
-            }else if (_zoomHeight > CameraControllerData.MaxHeight)
-            {
-                _zoomHeight = CameraControllerData.MaxHeight;
-            }
         }
 
         private void UpdateCameraPosition()

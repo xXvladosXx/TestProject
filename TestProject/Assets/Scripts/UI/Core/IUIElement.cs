@@ -4,8 +4,8 @@ namespace UI.Core
 {
     public interface IUIElement
     {
-        public event Action<IUIElement>  OnElementHide;
-        public event Action<IUIElement>  OnElementShow;
+        public event Action OnElementHide;
+        public event Action<IUIElement> OnElementShow;
 
         void Init(UIData player);
         void Hide();

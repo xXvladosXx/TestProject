@@ -7,7 +7,7 @@ namespace UI.Core
     {
         protected UIData UIData;
         
-        public event Action<IUIElement> OnElementHide;
+        public event Action OnElementHide;
         public event Action<IUIElement> OnElementShow;
 
         public virtual void Init(UIData uiData)
@@ -15,13 +15,13 @@ namespace UI.Core
             UIData = uiData;
         }
 
-        public void Hide()
+        public virtual void Hide()
         {
             gameObject.SetActive(false);
-            OnElementHide?.Invoke(this);
+            OnElementHide?.Invoke();
         }
 
-        public void Show()
+        public virtual void Show()
         {
             gameObject.SetActive(true);
             OnElementShow?.Invoke(this);

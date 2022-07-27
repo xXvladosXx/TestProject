@@ -1,16 +1,13 @@
-﻿using Interaction;
-using Interaction.Core;
+﻿using Interaction.Core;
 
-namespace Inventory.Items
+namespace Interaction
 {
     public class ChestInteractableObject : InteractableObject
     {
-        public override bool TryToInteract(IInteractor interactor)
+        public override void Interact(IInteractor interactor)
         {
-            base.TryToInteract(interactor);
-            Destroy(gameObject);
-
-            return true;
+            base.Interact(interactor);
+            Destroy(this);
         }
     }
 }

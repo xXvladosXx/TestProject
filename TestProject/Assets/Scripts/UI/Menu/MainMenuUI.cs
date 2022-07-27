@@ -1,11 +1,13 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UI.Core;
+using UI.TimeCounter;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI.Menu
 {
-    public class MainMenuUI : StaticUIElement
+    public class MainMenuUI : StaticUIElement, IBestTimeRefreshable
     {
         [SerializeField] private Button _startGame;
         [SerializeField] private TextMeshProUGUI _time;
@@ -13,7 +15,26 @@ namespace UI.Menu
         public override void Init(UIData uiData)
         {
             base.Init(uiData);
-            _time.text = uiData.SaveContext.GetBestTime();
+            
+            _time.text = UIData.SaveContext.GetBestTime();
+            
+            _startGame.onClick.AddListener(StartGame);
+        }
+
+        private void StartGame()
+        {
+            UIData.GameContext.StartGame();
+            Hide();
+        }
+        
+        private void OnDisable()
+        {
+            _startGame.onClick.RemoveAllListeners();
+        }
+
+        public void Refresh()
+        {
+            _time.text = UIData.SaveContext.GetBestTime();
         }
     }
 }

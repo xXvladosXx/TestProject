@@ -28,7 +28,7 @@ namespace Inventory.Core
         {
             foreach (var itemSlot in ItemSlots)
             {
-                if (itemSlot.Item == null) return false;
+                if (itemSlot.Item == null) continue;
                 
                 if (itemSlot.Item == item)
                     return true;

@@ -1,30 +1,74 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Interaction.Core;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Interaction
 {
+    [RequireComponent(typeof(Animator), 
+        typeof(Collider))]
     public abstract class InteractableObject : MonoBehaviour, IInteractable
     {
-        [SerializeField] private string TextOfInteraction;
+        [TextArea]
+        [SerializeField] private string _textOfInteraction;
+
+        [SerializeField] private Material _highlightMaterial;
+        [SerializeField] private Material _defaultMaterial;
+
         
-        public event Action<GameObject> OnInteracted;
+        private Animator _animator;
+        private Renderer _selectionRenderer;
         
-        public virtual bool TryToInteract(IInteractor interactor)
+        private List<Renderer> _selectionRenderers = new List<Renderer>();
+
+        protected Collider Collider;
+        
+        private static readonly int Interacted = Animator.StringToHash("Interacted");
+
+
+        private void Awake()
         {
-            print("With " + gameObject);
-            return true;
+            _animator = GetComponent<Animator>();
+            _selectionRenderer = GetComponent<Renderer>();
+            _selectionRenderers = GetComponentsInChildren<Renderer>().ToList();
+            
+            Collider = GetComponent<Collider>();
         }
 
-        public string InteractionText(IInteractor interactor)
+        public virtual void Interact(IInteractor interactor)
         {
-            return TextOfInteraction;
+            _animator.SetBool(Interacted, true);
+            Collider.enabled = false;
         }
 
-        public virtual void OnMouseEnter()
+        public string InteractionText()
         {
-            print("Color changed");
+            return _textOfInteraction;
+        }
+
+        public void HighlightObject()
+        {
+            if(_selectionRenderer != null)
+                _selectionRenderer.material = _highlightMaterial;
+
+            foreach (var selectionRenderer in _selectionRenderers)
+            {
+                selectionRenderer.material = _highlightMaterial;
+            }
+        }
+
+
+        public void OnMouseExit()
+        {
+            if(_selectionRenderer != null)
+                _selectionRenderer.material = _defaultMaterial;
+            
+            foreach (var selectionRenderer in _selectionRenderers)
+            {
+                selectionRenderer.material = _defaultMaterial;
+            }
         }
     }
 }

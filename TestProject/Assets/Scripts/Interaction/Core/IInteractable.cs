@@ -6,10 +6,9 @@ namespace Interaction.Core
 {
     public interface IInteractable
     {
-        public event Action<GameObject> OnInteracted;
-        public bool TryToInteract(IInteractor interactor);
-        public string InteractionText(IInteractor interactor);
-
-        public void OnMouseEnter();
+        public void Interact(IInteractor interactor);
+        public string InteractionText();
+        void HighlightObject();
+        void OnMouseExit();
     }
 }
