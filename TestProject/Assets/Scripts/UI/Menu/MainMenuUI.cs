@@ -16,7 +16,6 @@ namespace UI.Menu
         {
             base.Init(uiData);
             
-            _time.text = UIData.SaveContext.GetBestTime();
             
             _startGame.onClick.AddListener(StartGame);
         }
@@ -34,7 +33,6 @@ namespace UI.Menu
 
         public void Refresh()
         {
-            _time.text = UIData.SaveContext.GetBestTime();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Audio;
 using Interaction.Core;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -16,7 +17,7 @@ namespace Interaction
 
         [SerializeField] private Material _highlightMaterial;
         [SerializeField] private Material _defaultMaterial;
-
+        [SerializeField] private AudioClip _effect;
         
         private Animator _animator;
         private Renderer _selectionRenderer;
@@ -28,7 +29,7 @@ namespace Interaction
         private static readonly int Interacted = Animator.StringToHash("Interacted");
 
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _animator = GetComponent<Animator>();
             _selectionRenderer = GetComponent<Renderer>();
@@ -39,6 +40,8 @@ namespace Interaction
 
         public virtual void Interact(IInteractor interactor)
         {
+            AudioManager.Instance.PlayEffectSound(_effect);
+
             _animator.SetBool(Interacted, true);
             Collider.enabled = false;
         }

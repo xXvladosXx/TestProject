@@ -17,13 +17,15 @@ namespace Entities
         [field: SerializeField] public ItemPicker ItemPicker { get; private set; }
         [SerializeField] private Vector3 _startPosition;
         
-        public PlayerInput PlayerInput;
         public PlayerInputActions PlayerInputActions { get; private set; }
         public CameraController CameraController { get; private set; }
 
         private Vector3 _startRotation;
         private Vector3 _currentPosition;
-        
+        private PlayerInput _playerInput;
+
+        public Vector3 Position => transform.position;
+
         public event Action<IInteractable, IInteractor> OnInteracted;
 
         
@@ -31,13 +33,13 @@ namespace Entities
         {
             base.Awake();
 
-            PlayerInput = GetComponent<PlayerInput>();
+            _playerInput = GetComponent<PlayerInput>();
             CameraController = GetComponent<CameraController>();
             
-            PlayerInput.Init();
-            CameraController.Init(PlayerInput);
+            _playerInput.Init();
+            CameraController.Init(_playerInput);
             
-            PlayerInputActions = PlayerInput.PlayerInputActions;
+            PlayerInputActions = _playerInput.PlayerInputActions;
 
             _startRotation = transform.eulerAngles;
             
