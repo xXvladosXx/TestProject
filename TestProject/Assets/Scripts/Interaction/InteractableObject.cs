@@ -18,6 +18,7 @@ namespace Interaction
         [SerializeField] private Material _highlightMaterial;
         [SerializeField] private Material _defaultMaterial;
         [SerializeField] private AudioClip _effect;
+        [SerializeField] private bool _shouldChangeMaterialInChildren;
         
         private Animator _animator;
         private Renderer _selectionRenderer;
@@ -56,10 +57,17 @@ namespace Interaction
             if(_selectionRenderer != null)
                 _selectionRenderer.material = _highlightMaterial;
 
+            if(!_shouldChangeMaterialInChildren) return;
+            
             foreach (var selectionRenderer in _selectionRenderers)
             {
                 selectionRenderer.material = _highlightMaterial;
             }
+        }
+
+        public virtual void OnMouseClicked(IInteractor interactor)
+        {
+            
         }
 
 
@@ -67,6 +75,8 @@ namespace Interaction
         {
             if(_selectionRenderer != null)
                 _selectionRenderer.material = _defaultMaterial;
+            
+            if(!_shouldChangeMaterialInChildren) return;
             
             foreach (var selectionRenderer in _selectionRenderers)
             {

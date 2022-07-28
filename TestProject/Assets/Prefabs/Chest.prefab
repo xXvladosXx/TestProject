@@ -82,9 +82,11 @@ MonoBehaviour:
   _highlightMaterial: {fileID: 2100000, guid: c3b9c76370e312e4ba63efafcfee49f5, type: 2}
   _defaultMaterial: {fileID: 2100000, guid: ed8f9be796d22ce41a61877771323fc8, type: 2}
   _effect: {fileID: 0}
+  _shouldChangeMaterialInChildren: 0
   <Item>k__BackingField: {fileID: 11400000, guid: 0b6e298f3e6bbaf4fb8fe18faf195c5f, type: 2}
   _timeToDestroyItem: 0.5
   _speedModifier: 4
+  _particle: {fileID: 0}
 --- !u!65 &2399180148600235973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -315,6 +317,9 @@ MonoBehaviour:
   _highlightMaterial: {fileID: 2100000, guid: 6d58c09b6deb05e4bb3647383e0e3f0e, type: 2}
   _defaultMaterial: {fileID: 2100000, guid: c2ca3a5fcb96b5744b3f4f5ca5cf9812, type: 2}
   _effect: {fileID: 8300000, guid: 7656fefb03214594dbdd3130ed3578be, type: 3}
+  _shouldChangeMaterialInChildren: 1
+  _timeToDestroyItem: 0.75
+  _particle: {fileID: 7226583673155636403, guid: a2ab56839e1c9504ea9d141e95d0b16b, type: 3}
 --- !u!1 &8943773735531210516
 GameObject:
   m_ObjectHideFlags: 0

@@ -95,8 +95,10 @@ namespace Entities
         {
             var hit = Raycaster.MouseRaycast(CameraController.MainCamera);
             if (!hit.HasValue) return;
+            
             if (hit.Value.collider.TryGetComponent(out IInteractable interactable))
             {
+                interactable.OnMouseClicked(this);
                 interactable.HighlightObject();
                 interactable.OnMouseExit();
                 OnInteracted?.Invoke(interactable, this);

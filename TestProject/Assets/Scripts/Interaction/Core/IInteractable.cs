@@ -9,6 +9,7 @@ namespace Interaction.Core
         public void Interact(IInteractor interactor);
         public string InteractionText();
         void HighlightObject();
+        void OnMouseClicked(IInteractor interactor);
         void OnMouseExit();
     }
 }

@@ -8,14 +8,19 @@ namespace Data
     [Serializable]
     public class LevelGeneratorData
     {
+        [field: Header("Doors to generate")]
         [field: Range(1,8)]
         [field: SerializeField] public int PossibleDoorsToGenerate { get; private set; }
+        [field: SerializeField] public List<GameObject> PossibleWallsToSpawn { get; private set; }
+
         
+        [field: Header("Spawn form")]
         [field: SerializeField] public Vector3 PossibleSpawnPoint { get; private set; }
+        
+        
+        [field: Header("Interactable objects")]
         [field: SerializeField] public ChestInteractableObject ChestPrefab { get; private set; }
         [field: SerializeField] public RequirementInteractableObject DoorPrefab { get; private set; }
         [field: SerializeField] public ItemInteractableObject KeyPrefab { get; private set; }
-        
-        [field: SerializeField] public List<GameObject> PossibleWallsToSpawn { get; private set; }
     }
 }

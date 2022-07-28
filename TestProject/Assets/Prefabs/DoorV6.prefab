@@ -164,12 +164,15 @@ MonoBehaviour:
   _highlightMaterial: {fileID: 2100000, guid: a301f3afb8bcfb84ba8c62ad7df20f8f, type: 2}
   _defaultMaterial: {fileID: 2100000, guid: 0b7dd8513656d9c4fa0cbe919fb9fa8d, type: 2}
   _effect: {fileID: 8300000, guid: 2349f3e801e69264097261a3127e700c, type: 3}
+  _shouldChangeMaterialInChildren: 1
   <ItemRequirements>k__BackingField:
   - <Items>k__BackingField:
     - {fileID: 11400000, guid: 0b6e298f3e6bbaf4fb8fe18faf195c5f, type: 2}
   <HashRequirement>k__BackingField:
     <Hash>k__BackingField: 
   _requirementText: You need a key!
+  _shakeTime: 0.1
+  _shakeMagnitude: 0.1
 --- !u!1 &8550782041933127092
 GameObject:
   m_ObjectHideFlags: 0

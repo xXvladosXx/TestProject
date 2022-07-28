@@ -12,6 +12,7 @@ namespace Interaction
         [field: SerializeField] private Item Item { get; set; }
         [field: SerializeField] private float _timeToDestroyItem = .5f;
         [field: SerializeField] private float _speedModifier = 4f;
+        [field: SerializeField] private ParticleSystem _particle;
 
         private Rotation _rotation;
         private Vector3 _pickerPosition;
@@ -26,16 +27,19 @@ namespace Interaction
         {
             if (_itemPicked)
             {
-                var angle = (_pickerPosition - transform.position).normalized;
-                transform.forward = angle;
-                transform.Translate(transform.forward * (_speedModifier * Time.deltaTime));
+                transform.rotation = Quaternion.Euler(Vector3.zero);
+                
+                transform.Translate(transform.up * (_speedModifier * Time.deltaTime));
             }
         }
 
         public override void Interact(IInteractor interactor)
         {
             base.Interact(interactor);
+            
             Destroy(_rotation);
+            
+            Instantiate(_particle, transform.position, Quaternion.identity, transform);
             
             _itemPicked = true;
             _pickerPosition = interactor.Position;
