@@ -18,7 +18,6 @@ namespace UI.TimeCounter
             base.Init(uiData);
 
             _time.text = UIData.SaveContext.GetBestTime();
-            print(UIData.SaveContext.GetBestTime());
             
             UIData.GameContext.OnGameStarted += StartCount;
         }
