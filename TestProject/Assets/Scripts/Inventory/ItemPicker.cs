@@ -7,5 +7,10 @@ namespace Inventory
     public class ItemPicker
     {
         [field: SerializeField] public Core.Inventory Inventory { get; private set; }
+
+        public void ResetInventory()
+        {
+            Inventory.ItemContainer.Clear();
+        }
     }
 }

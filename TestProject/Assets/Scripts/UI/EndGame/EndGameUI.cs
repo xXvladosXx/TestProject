@@ -30,7 +30,7 @@ namespace UI.EndGame
 
         private void RestartGame()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            UIData.GameContext.StartGame();
             Hide();
         }
 

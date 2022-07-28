@@ -5,9 +5,10 @@ using UnityEngine;
 
 namespace Interaction
 {
-    public class RequirementInteractableObject : InteractableObject, IGameEnder
+    public class RequirementInteractableObject : InteractableObject, IGameEnder, IHashable
     {
         [field: SerializeField] private List<ItemRequirement> ItemRequirements { get; set; }
+        [field: SerializeField] private HashRequirement HashRequirement { get; set; }
 
         [TextArea]
         [SerializeField] private string _requirementText;
@@ -18,7 +19,11 @@ namespace Interaction
 
         private void Start()
         {
+            HashRequirement.Hash = Hash;
             Requirements.AddRange(ItemRequirements);
+            Requirements.Add(HashRequirement);
         }
+
+        public string Hash { get; set; }
     }
 }

@@ -36,5 +36,13 @@ namespace Inventory.Core
 
             return false;
         }
+
+        public void Clear()
+        {
+            foreach (var itemSlot in ItemSlots)
+            {
+                itemSlot.RemoveItem();
+            }
+        }
     }
 }

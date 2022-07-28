@@ -8,6 +8,7 @@ namespace Inventory.Core
         [field: SerializeField] public ItemData ItemData { get; private set; }
         [field: SerializeField] public Sprite Sprite { get; private set; }
         [field: SerializeField] public ItemType ItemType { get; private set; }
+        [field: SerializeField] public string Hash { get; set; }
     }
     
     public enum ItemType

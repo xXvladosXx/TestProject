@@ -11,22 +11,32 @@ namespace UI.TimeCounter
     {
         [SerializeField] private TextMeshProUGUI _time;
 
+        private bool _startCount;
+        
         public override void Init(UIData uiData)
         {
             base.Init(uiData);
 
+            _time.text = UIData.SaveContext.GetBestTime();
+            print(UIData.SaveContext.GetBestTime());
+            
             UIData.GameContext.OnGameStarted += StartCount;
         }
 
         private void StartCount()
         {
             UIData.GameContext.OnGameStarted -= StartCount;
+
+            _startCount = true;
         }
 
         private void Update()
         {
-            var time = UIData.GameContext.Time;
-            _time.text = TextFormatter.FormatToTwoDecimalAfterPoint(time);
+            if (_startCount)
+            {
+                var time = UIData.GameContext.Time;
+                _time.text = TextFormatter.FormatToTwoDecimalAfterPoint(time);
+            }
         }
     }
 }

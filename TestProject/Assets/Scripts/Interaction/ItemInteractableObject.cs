@@ -3,10 +3,11 @@ using Interaction.Core;
 using Inventory.Core;
 using TransformChange;
 using UnityEngine;
+using Utilities.Extensions;
 
 namespace Interaction
 {
-    public class ItemInteractableObject : InteractableObject
+    public class ItemInteractableObject : InteractableObject, IHashable
     {
         [field: SerializeField] private Item Item { get; set; }
         [field: SerializeField] private float _timeToDestroyItem = .5f;
@@ -41,12 +42,19 @@ namespace Interaction
             
             interactor.ItemPicker.Inventory.ItemContainer.TryToAddItem(new ItemSlot(Item));
             
-            DestroyObject();
+            this.CallWithDelay(DeactivateKey, _timeToDestroyItem);
         }
 
-        private void DestroyObject()
+        private void DeactivateKey()
         {
-            Destroy(gameObject, _timeToDestroyItem);
+            gameObject.SetActive(false);
+        }
+
+
+        public string Hash
+        {
+            get => Item.Hash;
+            set => Item.Hash = value;
         }
     }
 }

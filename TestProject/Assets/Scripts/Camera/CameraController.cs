@@ -12,15 +12,15 @@ namespace Camera
     public class CameraController : MonoBehaviour
     {
         [field: SerializeField] private CameraControllerData CameraControllerData { get; set; }
-        
+
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private Transform _centerTransform;
 
         public UnityEngine.Camera MainCamera { get; private set; }
-        
+
         private Vector3 _targetPosition;
         private Vector3 _velocity;
-        
+
         private float _zoomHeight;
         private float _currentSpeed;
         private PlayerInputActions _cameraActions;
@@ -40,27 +40,27 @@ namespace Camera
         private void Update()
         {
             GetMovement();
-            
+
             if (_cameraActions.Camera.RotationLeft.IsPressed())
             {
                 RotateCamera(false);
             }
+
             if (_cameraActions.Camera.RotationRight.IsPressed())
             {
                 RotateCamera(true);
             }
 
-            UpdateCameraPosition();
             UpdatePosition();
         }
 
-    
+
         private void GetMovement()
         {
             Vector3 inputValue = _movement.ReadValue<Vector2>().x * GetCameraRight() +
                                  _movement.ReadValue<Vector2>().y * GetCameraForward();
-            
-            if(inputValue.sqrMagnitude > .1f)
+
+            if (inputValue.sqrMagnitude > .1f)
                 _targetPosition += inputValue;
         }
 
@@ -91,41 +91,24 @@ namespace Camera
             }
             else
             {
-                if (!enabled)
-                {
-                    _velocity = Vector3.zero;
-                }
-                else
-                {
-                    _velocity = Vector3.Lerp(_velocity, Vector3.zero, Time.deltaTime * CameraControllerData.Damping);
-                    transform.position += _velocity * Time.deltaTime;
-                }
+                _velocity = Vector3.Lerp(_velocity, Vector3.zero, Time.deltaTime * CameraControllerData.Damping);
+                transform.position += _velocity * Time.deltaTime;
             }
-            
+
             _targetPosition = Vector3.zero;
         }
 
-        private void UpdateCameraPosition()
-        {
-            var localPosition = _cameraTransform.localPosition;
-            
-            Vector3 zoomTarget = new Vector3(localPosition.x, _zoomHeight, localPosition.z);
-            zoomTarget -= CameraControllerData.ZoomSpeed * (_zoomHeight - localPosition.y) * Vector3.forward;
-            
-            _cameraTransform.localPosition = Vector3.Lerp(localPosition, zoomTarget, Time.deltaTime * CameraControllerData.ZoomDamping);
-            _cameraTransform.LookAt(transform);
-        }
-        
         private void RotateCamera(bool right)
         {
             if (right)
             {
-                transform.RotateAround(transform.position, _centerTransform.up, CameraControllerData.MaxRotationSpeed * Time.deltaTime);
+                transform.RotateAround(transform.position, _centerTransform.up,
+                    CameraControllerData.MaxRotationSpeed * Time.deltaTime);
                 return;
             }
-            
-            transform.RotateAround(transform.position, _centerTransform.up, -CameraControllerData.MaxRotationSpeed * Time.deltaTime);
-        }
 
+            transform.RotateAround(transform.position, _centerTransform.up,
+                -CameraControllerData.MaxRotationSpeed * Time.deltaTime);
+        }
     }
 }

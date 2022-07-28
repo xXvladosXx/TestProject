@@ -1,5 +1,6 @@
 ﻿using System;
 using Entities;
+using Level;
 using Saving;
 using UI.Core;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class Game : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private UIController _uiController;
+    [SerializeField] private LevelGenerator _levelGenerator;
 
     private SaveContext _saveContext;
     private GameContext _gameContext;
@@ -51,10 +53,12 @@ public class Game : MonoBehaviour
     {
         _gameContext.OnGameEnded -= OnGameEnded;
             
+        _player.ItemPicker.ResetInventory();
         _gameStarted = false;
             
         DeactivatePlayerController();
-            
+        _levelGenerator.DestroyObjects();
+        
         _saveContext.TryToRegisterBestResult(new SaveData
         {
             Time = _timeSinceGameStarted
@@ -67,6 +71,8 @@ public class Game : MonoBehaviour
     {
         _gameContext.OnGameStarted -= OnGameStarted;
         _gameContext.OnGameEnded += OnGameEnded;
+        
+        _levelGenerator.InstantiateObjects();
 
         _gameStarted = true;
         _timeSinceGameStarted = 0;
