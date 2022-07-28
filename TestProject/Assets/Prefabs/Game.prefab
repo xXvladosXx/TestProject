@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8642849952725126596}
   - component: {fileID: 8642849952725126599}
-  - component: {fileID: 1884893313523608451}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -48,11 +47,7 @@ MonoBehaviour:
   _uiController: {fileID: 0}
   _levelGenerator:
     <LevelGeneratorData>k__BackingField:
-      <PossibleDoorsToGenerate>k__BackingField: 8
-      <PossibleSpawnPoint>k__BackingField: {x: 2, y: 0, z: 2}
-      <ChestPrefab>k__BackingField: {fileID: 8943727360682079247, guid: 4f6f9e58893c09642b18cdfcc66258fc, type: 3}
-      <DoorPrefab>k__BackingField: {fileID: 2166232559450141741, guid: a9061a67ca622c8428d0811b5684d32a, type: 3}
-      <KeyPrefab>k__BackingField: {fileID: 2979012371648954743, guid: 5a6b9980d4981c74db1433655aee8bdb, type: 3}
+      <PossibleDoorsToGenerate>k__BackingField: 7
       <PossibleWallsToSpawn>k__BackingField:
       - {fileID: 0}
       - {fileID: 0}
@@ -61,29 +56,8 @@ MonoBehaviour:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
---- !u!114 &1884893313523608451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8642849952725126598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9340ec8089b4438f9dcd68e059bb208d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: 21414bdee01646c48a77927b620f4fc2, type: 3}
+      <PossibleSpawnPoint>k__BackingField: {x: 2, y: 0, z: 2}
+      <ChestPrefab>k__BackingField: {fileID: 8943727360682079247, guid: 4f6f9e58893c09642b18cdfcc66258fc, type: 3}
+      <DoorPrefab>k__BackingField: {fileID: 2166232559450141741, guid: a9061a67ca622c8428d0811b5684d32a, type: 3}
+      <KeyPrefab>k__BackingField: {fileID: 2979012371648954743, guid: 5a6b9980d4981c74db1433655aee8bdb, type: 3}
+  _music: {fileID: 8300000, guid: 21414bdee01646c48a77927b620f4fc2, type: 3}

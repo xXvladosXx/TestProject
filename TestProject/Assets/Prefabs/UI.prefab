@@ -625,6 +625,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8304433438537457627}
     m_Modifications:
+    - target: {fileID: 535135158824409622, guid: 6920e87c5696d4748a3a53e255c27b1f, type: 3}
+      propertyPath: m_text
+      value: Whoops!\n You don`t have a result.
+      objectReference: {fileID: 0}
+    - target: {fileID: 535135158824409622, guid: 6920e87c5696d4748a3a53e255c27b1f, type: 3}
+      propertyPath: m_fontSize
+      value: 23.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 535135158824409622, guid: 6920e87c5696d4748a3a53e255c27b1f, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 535135158824409623, guid: 6920e87c5696d4748a3a53e255c27b1f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -33.342
+      objectReference: {fileID: 0}
+    - target: {fileID: 535135158824409623, guid: 6920e87c5696d4748a3a53e255c27b1f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.778
+      objectReference: {fileID: 0}
     - target: {fileID: 535135158930627912, guid: 6920e87c5696d4748a3a53e255c27b1f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

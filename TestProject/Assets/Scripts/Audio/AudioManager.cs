@@ -30,5 +30,10 @@ namespace Audio
             _musicSource.PlayOneShot(audioClip);
             _musicSource.loop = true;
         }
+
+        public void StopMusicSound()
+        {
+            _musicSource.Stop();
+        }
     }
 }

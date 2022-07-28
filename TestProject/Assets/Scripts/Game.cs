@@ -1,4 +1,5 @@
 ﻿using System;
+using Audio;
 using Entities;
 using Level;
 using Saving;
@@ -10,6 +11,7 @@ public class Game : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private UIController _uiController;
     [SerializeField] private LevelGenerator _levelGenerator;
+    [SerializeField] private AudioClip _music;
 
     private SaveContext _saveContext;
     private GameContext _gameContext;
@@ -55,6 +57,8 @@ public class Game : MonoBehaviour
             
         _player.ItemPicker.ResetInventory();
         _gameStarted = false;
+        
+        AudioManager.Instance.StopMusicSound();
             
         DeactivatePlayerController();
         _levelGenerator.DestroyObjects();
@@ -71,6 +75,8 @@ public class Game : MonoBehaviour
     {
         _gameContext.OnGameStarted -= OnGameStarted;
         _gameContext.OnGameEnded += OnGameEnded;
+        
+        AudioManager.Instance.PlayMusicSound(_music);
         
         _levelGenerator.InstantiateObjects();
 

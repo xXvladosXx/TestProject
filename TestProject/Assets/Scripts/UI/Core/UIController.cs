@@ -18,8 +18,6 @@ namespace UI.Core
         
         private List<IBestTimeRefreshable> _timeRefreshables = new List<IBestTimeRefreshable>();
 
-        private UIElement _currentPopupUIElement;
-
         public event Action OnPopupUIOpened;
         public event Action OnPopupUIHide;
         public void Init(UIData uiData)

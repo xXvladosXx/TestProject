@@ -3772,30 +3772,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6787868882899592568, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6787868882899592568, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6787868882899592568, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6787868882899592568, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6787868882899592568, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6787868882899592568, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8304433438537457607, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
       propertyPath: m_Name
       value: UI
@@ -3882,58 +3858,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304433438537457627, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433438973225793, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433438973225793, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433438973225793, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433438973225793, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433438973225793, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433438973225793, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433439237130534, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433439805355505, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433439805355505, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433439805355505, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433439805355505, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433439805355505, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304433439805355505, guid: 766f9e800d0832e40a2208b96238bf1b, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4318,63 +4242,11 @@ PrefabInstance:
     - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
       propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[5]
       value: 
-      objectReference: {fileID: 1132294582}
+      objectReference: {fileID: 1812412263}
     - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
       propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[6]
       value: 
-      objectReference: {fileID: 1140868551}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[7]
-      value: 
-      objectReference: {fileID: 312456433}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[8]
-      value: 
-      objectReference: {fileID: 794092622}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[9]
-      value: 
-      objectReference: {fileID: 592673153}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[10]
-      value: 
-      objectReference: {fileID: 165112440}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[11]
-      value: 
-      objectReference: {fileID: 297222652}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[12]
-      value: 
-      objectReference: {fileID: 1599180112}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[13]
-      value: 
-      objectReference: {fileID: 1989392146}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[14]
-      value: 
-      objectReference: {fileID: 1812412263}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[15]
-      value: 
-      objectReference: {fileID: 1577653276}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[16]
-      value: 
       objectReference: {fileID: 373472294}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[17]
-      value: 
-      objectReference: {fileID: 899088243}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[18]
-      value: 
-      objectReference: {fileID: 1927335985}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[19]
-      value: 
-      objectReference: {fileID: 730575730}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
 --- !u!33 &1891867147420608381
