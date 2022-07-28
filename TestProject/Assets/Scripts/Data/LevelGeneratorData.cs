@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Data.Core;
 using Interaction;
 using UnityEngine;
 
 namespace Data
 {
     [Serializable]
-    public class LevelGeneratorData
+    public class LevelGeneratorData : IData
     {
         [field: Header("Doors to generate")]
         [field: Range(1,8)]

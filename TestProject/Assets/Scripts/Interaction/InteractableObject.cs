@@ -25,7 +25,7 @@ namespace Interaction
         
         private List<Renderer> _selectionRenderers = new List<Renderer>();
 
-        protected Collider Collider;
+        private Collider _collider;
         
         private static readonly int Interacted = Animator.StringToHash("Interacted");
 
@@ -36,7 +36,7 @@ namespace Interaction
             _selectionRenderer = GetComponent<Renderer>();
             _selectionRenderers = GetComponentsInChildren<Renderer>().ToList();
             
-            Collider = GetComponent<Collider>();
+            _collider = GetComponent<Collider>();
         }
 
         public virtual void Interact(IInteractor interactor)
@@ -44,7 +44,7 @@ namespace Interaction
             AudioManager.Instance.PlayEffectSound(_effect);
 
             _animator.SetBool(Interacted, true);
-            Collider.enabled = false;
+            _collider.enabled = false;
         }
 
         public string InteractionText()

@@ -16,9 +16,9 @@ namespace Entities
     {
         [field: SerializeField] public ItemPicker ItemPicker { get; private set; }
         [SerializeField] private Vector3 _startPosition;
-        
-        public PlayerInputActions PlayerInputActions { get; private set; }
-        public CameraController CameraController { get; private set; }
+
+        private PlayerInputActions PlayerInputActions { get; set; }
+        private CameraController CameraController { get; set; }
 
         private Vector3 _startRotation;
         private Vector3 _currentPosition;

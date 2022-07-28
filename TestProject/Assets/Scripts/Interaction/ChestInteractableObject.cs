@@ -7,10 +7,6 @@ namespace Interaction
     {
         [field: SerializeField] private float _timeToDestroyItem = .5f;
         [field: SerializeField] private ParticleSystem _particle;
-        protected override void Awake()
-        {
-            base.Awake();
-        }
 
         public override void Interact(IInteractor interactor)
         {
