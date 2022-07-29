@@ -15,7 +15,7 @@ namespace Camera
 
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private Transform _centerTransform;
-
+       
         public UnityEngine.Camera MainCamera { get; private set; }
 
         private Vector3 _targetPosition;
@@ -38,7 +38,6 @@ namespace Camera
         private void Update()
         {
             GetMovement();
-
             if (_cameraActions.Camera.RotationLeft.IsPressed())
             {
                 RotateCamera(false);
@@ -48,10 +47,8 @@ namespace Camera
             {
                 RotateCamera(true);
             }
-
             UpdatePosition();
         }
-
 
         private void GetMovement()
         {
@@ -83,7 +80,17 @@ namespace Camera
             _currentSpeed = Mathf.Lerp(_currentSpeed, CameraControllerData.MaxSpeed,
                 Time.deltaTime * CameraControllerData.Acceleration);
 
-            transform.position += _targetPosition * (_currentSpeed * Time.deltaTime);
+            var position = transform.position;
+            position += _targetPosition * (_currentSpeed * Time.deltaTime);
+
+            var clampedPosition = new Vector3( 
+                Mathf.Clamp(position.x, CameraControllerData.MinPosition.x, CameraControllerData.MaxPosition.x),
+                Mathf.Clamp(position.y, CameraControllerData.MinPosition.y, CameraControllerData.MaxPosition.y),
+                Mathf.Clamp(position.z, CameraControllerData.MinPosition.z, CameraControllerData.MaxPosition.z)
+            );
+            
+            position = clampedPosition;
+            transform.position = position;
 
             _targetPosition = Vector3.zero;
         }
