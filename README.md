@@ -14,3 +14,4 @@ Ordinary test project
 - GUI Parts: https://assetstore.unity.com/packages/essentials/ui-samples-25468
 - New Input System: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/QuickStartGuide.html
 - Hit Impact Effects FREE: https://assetstore.unity.com/packages/vfx/particles/hit-impact-effects-free-218385
+- 2D Sprite: https://docs.unity3d.com/Packages/com.unity.2d.sprite@1.0/manual/index.html
