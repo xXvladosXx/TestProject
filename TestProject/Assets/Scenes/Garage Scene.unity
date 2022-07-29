@@ -14578,14 +14578,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1856338593899930204, guid: c90b08e991c098f429eef0bfef99f99b, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 4a7f8b2f1fba2ae4f8dfa5de8e61229e, type: 2}
-    - target: {fileID: 1856338593899930205, guid: c90b08e991c098f429eef0bfef99f99b, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 1856338593899930206, guid: c90b08e991c098f429eef0bfef99f99b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -15594,7 +15586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642849952725126596, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8642849952725126596, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15602,7 +15594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642849952725126596, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.66
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8642849952725126596, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15644,22 +15636,6 @@ PrefabInstance:
       propertyPath: _uiController
       value: 
       objectReference: {fileID: 7108507891875213047}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleSpawnPoint>k__BackingField.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleSpawnPoint>k__BackingField.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<MinAmountOfGeneratedDoors>k__BackingField
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
-      propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.size
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8642849952725126599, guid: 7ad92bbd9b67b0c4a8d2f3f865fa3e51, type: 3}
       propertyPath: _levelGenerator.<LevelGeneratorData>k__BackingField.<PossibleWallsToSpawn>k__BackingField.Array.data[0]
       value: 

@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &922492488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 922492490}
+  - component: {fileID: 922492489}
+  m_Layer: 0
+  m_Name: FloorBoxCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &922492490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922492488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 9, y: 0.1, z: 9}
+  m_Children: []
+  m_Father: {fileID: 8642849952725126596}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &922492489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922492488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.1}
 --- !u!1 &8642849952725126598
 GameObject:
   m_ObjectHideFlags: 0
@@ -27,7 +71,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 922492490}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,6 +93,7 @@ MonoBehaviour:
   _levelGenerator:
     <LevelGeneratorData>k__BackingField:
       <PossibleDoorsToGenerate>k__BackingField: 7
+      <MinAmountOfGeneratedDoors>k__BackingField: 4
       <PossibleWallsToSpawn>k__BackingField:
       - {fileID: 0}
       - {fileID: 0}
@@ -56,7 +102,9 @@ MonoBehaviour:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      <PossibleSpawnPoint>k__BackingField: {x: 2, y: 0, z: 2}
+      - {fileID: 0}
+      <PossibleSpawnPoint>k__BackingField: {x: 5, y: 0, z: 5}
+      <ColliderToSpawnChestIn>k__BackingField: {fileID: 922492489}
       <ChestPrefab>k__BackingField: {fileID: 8943727360682079247, guid: 4f6f9e58893c09642b18cdfcc66258fc, type: 3}
       <DoorPrefab>k__BackingField: {fileID: 2166232559450141741, guid: a9061a67ca622c8428d0811b5684d32a, type: 3}
       <KeyPrefab>k__BackingField: {fileID: 2979012371648954743, guid: 5a6b9980d4981c74db1433655aee8bdb, type: 3}

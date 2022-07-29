@@ -18,13 +18,14 @@ namespace Level
 
         public void InstantiateObjects()
         {
-            var xPoint = Random.Range(-LevelGeneratorData.PossibleSpawnPoint.x,
-                LevelGeneratorData.PossibleSpawnPoint.x);
-
-            var zPoint = Random.Range(-LevelGeneratorData.PossibleSpawnPoint.z,
-                LevelGeneratorData.PossibleSpawnPoint.z);
-
-            var vectorToSpawn = new Vector3(xPoint, 0, zPoint);
+            var xPoint =Random.Range(LevelGeneratorData.ColliderToSpawnChestIn.bounds.min.x,
+                LevelGeneratorData.ColliderToSpawnChestIn.bounds.max.x);
+            var yPoint = Random.Range(LevelGeneratorData.ColliderToSpawnChestIn.bounds.min.y,
+                LevelGeneratorData.ColliderToSpawnChestIn.bounds.max.y);
+            var zPoint = Random.Range(LevelGeneratorData.ColliderToSpawnChestIn.bounds.min.z,
+                LevelGeneratorData.ColliderToSpawnChestIn.bounds.max.z);
+            
+            var vectorToSpawn = new Vector3(xPoint, yPoint, zPoint);
 
             var chest = Object.Instantiate(LevelGeneratorData.ChestPrefab,
                 vectorToSpawn, Quaternion.identity);

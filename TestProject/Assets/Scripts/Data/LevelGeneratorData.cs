@@ -20,6 +20,7 @@ namespace Data
         
         [field: Header("Spawn form")]
         [field: SerializeField] public Vector3 PossibleSpawnPoint { get; private set; }
+        [field: SerializeField] public Collider ColliderToSpawnChestIn { get; private set; }
         
         
         [field: Header("Interactable objects")]

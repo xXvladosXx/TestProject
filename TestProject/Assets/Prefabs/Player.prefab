@@ -110,7 +110,7 @@ MonoBehaviour:
     <MaxSpeed>k__BackingField: 5
     <Acceleration>k__BackingField: 10
     <Damping>k__BackingField: 15
-    <MaxRotationSpeed>k__BackingField: 50
+    <MaxRotationSpeed>k__BackingField: 100
   _cameraTransform: {fileID: 1856338594217766136}
   _centerTransform: {fileID: 74433641749309086}
 --- !u!65 &1856338593899930204
@@ -120,7 +120,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856338593899930206}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4a7f8b2f1fba2ae4f8dfa5de8e61229e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
