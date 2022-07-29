@@ -19,9 +19,7 @@ namespace Camera
         public UnityEngine.Camera MainCamera { get; private set; }
 
         private Vector3 _targetPosition;
-        private Vector3 _velocity;
 
-        private float _zoomHeight;
         private float _currentSpeed;
         private PlayerInputActions _cameraActions;
         private InputAction _movement;
@@ -82,18 +80,10 @@ namespace Camera
 
         private void UpdatePosition()
         {
-            if (_targetPosition.sqrMagnitude > .1f)
-            {
-                _currentSpeed = Mathf.Lerp(_currentSpeed, CameraControllerData.MaxSpeed,
-                    Time.deltaTime * CameraControllerData.Acceleration);
+            _currentSpeed = Mathf.Lerp(_currentSpeed, CameraControllerData.MaxSpeed,
+                Time.deltaTime * CameraControllerData.Acceleration);
 
-                transform.position += _targetPosition * (_currentSpeed * Time.deltaTime);
-            }
-            else
-            {
-                _velocity = Vector3.Lerp(_velocity, Vector3.zero, Time.deltaTime * CameraControllerData.Damping);
-                transform.position += _velocity * Time.deltaTime;
-            }
+            transform.position += _targetPosition * (_currentSpeed * Time.deltaTime);
 
             _targetPosition = Vector3.zero;
         }

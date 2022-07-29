@@ -12,6 +12,9 @@ namespace Data
         [field: Header("Doors to generate")]
         [field: Range(1,7)]
         [field: SerializeField] public int PossibleDoorsToGenerate { get; private set; }
+        
+        [field: Range(2,7)]
+        [field: SerializeField] public int MinAmountOfGeneratedDoors { get; private set; }
         [field: SerializeField] public List<GameObject> PossibleWallsToSpawn { get; private set; }
 
         

@@ -41,7 +41,7 @@ namespace Level
 
             SpawnDoors(usedWalls, uniqueIdentifier);
             
-            while (usedWalls.Count == 0)
+            while (usedWalls.Count < LevelGeneratorData.MinAmountOfGeneratedDoors)
             {
                 SpawnDoors(usedWalls, uniqueIdentifier);
             }
@@ -49,7 +49,7 @@ namespace Level
 
         private void SpawnDoors(List<int> usedWalls, string uniqueIdentifier)
         {
-            var possibleDoorsToGenerate = Random.Range(4, LevelGeneratorData.PossibleDoorsToGenerate + 1);
+            var possibleDoorsToGenerate = Random.Range(1, LevelGeneratorData.PossibleDoorsToGenerate + 1);
             bool hashSpawned = false;
             
             for (int i = 0; i < possibleDoorsToGenerate; i++)
