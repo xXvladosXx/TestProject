@@ -6,6 +6,7 @@ Ordinary test project
 
 # Used assets:
 - DOTween: https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676
+- UI Samples: https://assetstore.unity.com/packages/essentials/ui-samples-25468
 - Minimal UI Sounds: https://assetstore.unity.com/packages/audio/sound-fx/minimal-ui-sounds-78266
 - Cloudy Summer Day Skybox: https://assetstore.unity.com/packages/2d/textures-materials/sky/cloudy-summer-day-skybox-1079
 - Old Medieval Chest: https://assetstore.unity.com/packages/3d/props/old-medieval-chest-188744
